@@ -37,7 +37,27 @@ module.exports = {
                             link: "/optimization/index",
                         },
                         {
-                            text: "优化",
+                            text: "构建优化",
+                            link: "/optimization/build",
+                        },
+                        {
+                            text: "懒加载和预加载",
+                            link: "/optimization/load",
+                        },
+                        {
+                            text: "重绘和回流",
+                            link: "/optimization/repaint-reflow",
+                        },
+                        {
+                            text: "渲染优化",
+                            link: "/optimization/render",
+                        },
+                        {
+                            text: "缓存",
+                            link: "/optimization/cache",
+                        },
+                        {
+                            text: "渲染优化",
                             link: "/optimization/render",
                         }
                     ],

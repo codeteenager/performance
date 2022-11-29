@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor</title>
+<script defer src="monitor.js"></script></head>
+
+<body>
+    <div id="container">
+        <div id="content">
+            <button onclick="errorClick()">抛出JS错误</button>
+            <button onclick="promiseErrorClick()">抛出promise异常</button>
+            <button onclick="sendSuccess()">ajax请求成功</button>
+            <button onclick="sendError()">ajax请求失败</button>
+        </div>
+    </div>
+    <script>
+        function errorClick() {
+            window.someVar.error = "error";
+        }
+        function promiseErrorClick() {
+            new Promise((resolve, reject) => {
+                window.someVar.error = "error";
+            }).then(() => {
+
+            });
+        }
+        function sendSuccess() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "/success", true);
+            xhr.responseType = "json";
+            xhr.onload = function () {
+                console.log(xhr.response);
+            }
+            xhr.send();
+        }
+        function sendError() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "/success", true);
+            xhr.responseType = "json";
+            xhr.onload = function () {
+                console.log(xhr.response);
+            }
+            xhr.onerror = function (error) {
+                console.log(error);
+            }
+            xhr.send();
+        }
+    </script>
+    <script src="./someError.js"></script>
+</body>
+
+</html>
