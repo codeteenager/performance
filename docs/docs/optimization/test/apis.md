@@ -1,0 +1,27 @@
+# 性能测量APIs
+
+* https://developer.mozilla.org/zh-CN/docs/Web/Performance 
+* https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Using_the_Performance_API 
+## Window.performance 
+* https://developer.mozilla.org/en-US/docs/Web/API/Window/performance 
+## 常用性能指标及计算公式 
+1. 关键时间节点(Navigation Timing， Resource Timing)
+2. 网络状态(Network APIs)
+3. 客户端服务端协商(HTTP Client Hints)&网页显示状态(UI APIs)
+
+
+* DNS 解析耗时: domainLookupEnd - domainLookupStart 
+* TCP 连接耗时: connectEnd - connectStart 
+* SSL 安全连接耗时: connectEnd - secureConnectionStart 
+* 网络请求耗时 (TTFB): responseStart - requestStart 
+* 数据传输耗时: responseEnd - responseStart 
+* DOM 解析耗时: domInteractive - responseEnd 
+* 资源加载耗时: loadEventStart - domContentLoadedEventEnd 
+* First Byte 时间: responseStart - domainLookupStart 
+* 白屏时间: responseEnd - fetchStart 
+* 首次可交互时间: domInteractive - fetchStart 
+* DOM Ready 时间: domContentLoadEventEnd - fetchStart 
+* 页面完全加载时间: loadEventStart - fetchStart 
+* HTTP 头部大小： transferSize - encodedBodySize 
+* 重定向次数：performance.navigation.redirectCount 
+* 重定向耗时: redirectEnd - redirectStart

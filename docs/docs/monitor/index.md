@@ -30,6 +30,7 @@
 ### 业务(business)
 
 |  错误名称  | 备注  |
+|   ---    |  ---    |
 | PV   | page view 即页面浏览量或点击量  |
 | UV  | 指访问某个站点的不同IP地址的人数 |
 | 页面的停留时间  |  用户的每一个页面的停留时间  |
@@ -374,6 +375,7 @@ export function blankScreen() {
 ```
 
 ### 加载时间 
+MDN上网站性能数据衡量：https://developer.mozilla.org/zh-CN/docs/Web/API/Navigation_timing_API
 * [PerformanceTiming](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceTiming)
 * [DOMContentLoaded](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded)
 * [FMP](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view#)

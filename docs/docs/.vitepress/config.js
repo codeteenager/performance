@@ -37,6 +37,10 @@ module.exports = {
                             link: "/optimization/index",
                         },
                         {
+                            text: "分享",
+                            link: "/optimization/share",
+                        },
+                        {
                             text: "构建优化",
                             link: "/optimization/build",
                         },
@@ -55,12 +59,90 @@ module.exports = {
                         {
                             text: "缓存",
                             link: "/optimization/cache",
-                        },
-                        {
-                            text: "渲染优化",
-                            link: "/optimization/render",
                         }
                     ],
+                },
+                {
+                    text: "Web性能指标",
+                    collapsible: true,
+                    items: [
+                        {
+                            text: "介绍",
+                            link: "/optimization/metrics/index",
+                        },
+                        {
+                            text: "RAIL性能模型",
+                            link: "/optimization/metrics/rail",
+                        },
+                        {
+                            text: "基于用户体验的性能指标",
+                            link: "/optimization/metrics/metrics",
+                        },
+                        {
+                            text: "Web Vitals",
+                            link: "/optimization/metrics/vitals",
+                        },
+                        {
+                            text: "其他性能指标",
+                            link: "/optimization/metrics/other",
+                        },
+                    ],
+                },
+                {
+                    text: "Web性能测试",
+                    collapsible: true,
+                    items: [
+                        {
+                            text: "介绍",
+                            link: "/optimization/test/index",
+                        },
+                        {
+                            text: "灯塔Lighthouse",
+                            link: "/optimization/test/lighthouse",
+                        },
+                        {
+                            text: "WebPageTest",
+                            link: "/optimization/test/webpagetest",
+                        },
+                        {
+                            text: "Chrome Devtools",
+                            link: "/optimization/test/chrome-devtools",
+                        },
+                        {
+                            text: "性能测量APIs",
+                            link: "/optimization/test/apis",
+                        },
+                    ]
+                },
+                {
+                    text: "请求和响应优化",
+                    collapsible: true,
+                    items: [
+                        {
+                            text: "介绍",
+                            link: "/optimization/response/index",
+                        },
+                        {
+                            text: "DNS解析",
+                            link: "/optimization/response/dns",
+                        },
+                        {
+                            text: "HTTP长连接",
+                            link: "/optimization/response/http",
+                        },
+                        {
+                            text: "HTTP2",
+                            link: "/optimization/response/http2",
+                        },
+                        {
+                            text: "避免重定向",
+                            link: "/optimization/response/redirect",
+                        },
+                        {
+                            text: "压缩构建的数据资源",
+                            link: "/optimization/response/compress",
+                        },
+                    ]
                 }
             ],
             "/monitor/": [
