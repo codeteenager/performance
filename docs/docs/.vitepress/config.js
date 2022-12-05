@@ -37,6 +37,10 @@ module.exports = {
                             link: "/optimization/index",
                         },
                         {
+                            text: "页面的生命周期",
+                            link: "/optimization/lifecycle",
+                        },
+                        {
                             text: "分享",
                             link: "/optimization/share",
                         },
