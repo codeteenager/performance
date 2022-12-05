@@ -147,6 +147,24 @@ module.exports = {
                             link: "/optimization/response/compress",
                         },
                     ]
+                },
+                {
+                    text: "渲染优化",
+                    collapsible: true,
+                    items: [
+                        {
+                            text: "介绍",
+                            link: "/optimization/render/index",
+                        },
+                        {
+                            text: "关键渲染路径优化",
+                            link: "/optimization/render/path",
+                        },
+                        {
+                            text: "页面布局与重绘优化",
+                            link: "/optimization/render/repaint-reflow",
+                        }
+                    ]
                 }
             ],
             "/monitor/": [
