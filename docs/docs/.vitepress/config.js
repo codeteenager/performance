@@ -193,6 +193,16 @@ module.exports = {
                             link: "/optimization/render/compose",
                         }
                     ]
+                },
+                {
+                    text: "资源优化",
+                    collapsible: true,
+                    items: [
+                        {
+                            text: "图片优化",
+                            link: "/optimization/resource/image",
+                        },
+                    ]
                 }
             ],
             "/monitor/": [
