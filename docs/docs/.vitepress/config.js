@@ -146,6 +146,22 @@ module.exports = {
                             text: "压缩构建的数据资源",
                             link: "/optimization/response/compress",
                         },
+                        {
+                            text: "HTTP缓存",
+                            link: "/optimization/response/http-cache",
+                        },
+                        {
+                            text: "CDN缓存",
+                            link: "/optimization/response/cdn-cache",
+                        },
+                        {
+                            text: "Push缓存",
+                            link: "/optimization/response/push-cache",
+                        },
+                        {
+                            text: "Service Worker缓存",
+                            link: "/optimization/response/service-worker",
+                        },
                     ]
                 },
                 {
@@ -161,8 +177,20 @@ module.exports = {
                             link: "/optimization/render/path",
                         },
                         {
+                            text: "JavaScript执行优化",
+                            link: "/optimization/render/javascript-execution",
+                        },
+                        {
+                            text: "计算样式优化",
+                            link: "/optimization/render/style-computed",
+                        },
+                        {
                             text: "页面布局与重绘优化",
                             link: "/optimization/render/repaint-reflow",
+                        },
+                        {
+                            text: "合成处理",
+                            link: "/optimization/render/compose",
                         }
                     ]
                 }
