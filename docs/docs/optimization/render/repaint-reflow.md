@@ -73,7 +73,7 @@ chrome创建图层的条件
 
 优化点：
 
-* 用translate替代top改变
+* 用translate替代top改变，因为top会触发重绘和回流，而translate不会
 * 用opacity替代visibility
 * 不要一条一条的修改DOM样式，预先定义好class，然后修改DOM的className
 * 把DOM离线后修改，比如：先把DOM给display：none（有一次Reflow），然后你修改100次，然后再把它显示出来
