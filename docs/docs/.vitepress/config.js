@@ -43,26 +43,6 @@ module.exports = {
                         {
                             text: "分享",
                             link: "/optimization/share",
-                        },
-                        {
-                            text: "构建优化",
-                            link: "/optimization/build",
-                        },
-                        {
-                            text: "懒加载和预加载",
-                            link: "/optimization/load",
-                        },
-                        {
-                            text: "重绘和回流",
-                            link: "/optimization/repaint-reflow",
-                        },
-                        {
-                            text: "渲染优化",
-                            link: "/optimization/render",
-                        },
-                        {
-                            text: "缓存",
-                            link: "/optimization/cache",
                         }
                     ],
                 },
@@ -202,6 +182,20 @@ module.exports = {
                             text: "图片优化",
                             link: "/optimization/resource/image",
                         },
+                        {
+                            text: "构建优化",
+                            link: "/optimization/resource/build",
+                        },
+                    ]
+                },
+                {
+                    text: "其他优化技术",
+                    collapsible: true,
+                    items: [
+                        {
+                            text: "懒加载和预加载",
+                            link: "/optimization/other/load",
+                        }
                     ]
                 }
             ],

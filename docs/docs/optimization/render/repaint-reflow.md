@@ -1,6 +1,10 @@
 # 页面布局与重绘优化
 页面布局也叫作重排和回流，指的是浏览器对页面元素的几何属性进行计算并将最终结果绘制出来的过程。凡是元素的宽高尺寸、在页面中的位置及隐藏或显示等信息发生改变时，都会触发页面的重新布局。 
 
+重绘：当渲染树中的一些元素需要更新属性，而这些属性只影响元素的外观、风格，而不会影响布局的就称为重绘，比如background-color。
+
+回流：当渲染树中的一部分（或全部）因为元素的规模尺寸、布局、隐藏等改变而需要重新构建，这就称为回流（reflow）。即当页面布局和几何属性改变时就需要回流。
+
 通常页面布局的作用范围会涉及整个文档，所以这个环节会带来大量的性能开销，我们在开发过程中，应当从代码层面出发，尽量避免页面布局或最小化其处理次数。如果仅修改了 DOM 元素的样式，而未影响其几何属性时，则浏览器会跳过页面布局的计算环节，直接进入重绘阶段。
  
 虽然重绘的性能开销不及页面布局高，但为了更高的性能体验，也应当降低重绘发生的频率和复杂度。
@@ -14,6 +18,70 @@
 * 最后一类是获取某些特定的属性值操作，比如页面可见区域宽高 offsetWidth、offsetHeight，页面视窗中元素与视窗边界的距离 offsetTop、offsetLeft，类似的属性值还有 scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientWidth、clientHeight及调用 window.getComputedStyle 方法。 
 
 这些属性和方法有一个共性，就是需要通过即时计算得到，所以浏览器就需要重新进行页面布局计算。
+
+触发回流的方式有：
+
+* 当你增加、删除、修改dom节点时，会触发Reflow或Repaint
+* 当你移动dom的位置，或是搞个动画的时候
+* 当你修改css样式的时候
+* 当你Resize窗口的时候，或者滚动的时候
+* 当你修改网页默认字体时
+
+触发重绘的方式有：dom修改和css修改
+
+### 触发页面重新布局的属性有哪些？
+
+* 盒子模型相关属性：width、height、padding、margin、display、border-width、border、min-height。
+* 定位属性及浮动：top、botton、left、right、position、float、clear。
+* 改变节点内部文字结构：text-align、overflow-y、font-weight、overflow、font-family、line-height、vertival-align、white-space、font-size。
+
+### 只触发重绘的属性有哪些？
+* color
+* border-style
+* border-radius
+* visibility
+* text-decoration
+* background
+* background-image
+* background-position
+* background-repeat
+* background-size
+* outline-color
+* outline-style
+* outline-width
+* box-shadow
+
+## 新建Dom的过程
+、获取dom后分割为多个图层2、对每个图层的节点计算样式结果（Recalculate style--样式重计算）3、为每个节点生成图形和位置（Layout -- 回流和重布局）4、将每个节点绘制填充到图层位图中（Paint Setup和Paint -- 重绘）5、图层作为纹理上传至GPU6、符合多个图层到页面上生成最终屏幕图像（Composite Layers -- 图层重组）
+
+将频繁重绘回流的dom元素单独作为一个独立图层，那么这个dom元素的重绘和回流的影响只会在这个图层中。
+
+### 如何将dom元素变成新的独立图层？
+
+chrome创建图层的条件
+
+1. 3D或透视变换CSS属性（perspective transform）
+2. 使用加速视频解码的`<video>`节点
+3. 拥有3D（WebGL）上下文或加速的2D上下文的`<canvas>`节点 
+4. 混合插件（如Flash）
+5. 对自己的opacity做css动画或使用一个动画webkit变换的元素
+6. 拥有加速css过滤器的元素
+7. 元素有一个包含复合层的后代节点（一个元素拥有一个子元素，该子元素在自己的层里）
+8. 元素有一个z-index较低且包含一个复合层的兄弟元素
+
+我们希望：1、避免使用触发重绘、回流的CSS属性。2、将重绘、回流的影响范围限制在单独的图层之内。
+
+优化点：
+
+* 用translate替代top改变
+* 用opacity替代visibility
+* 不要一条一条的修改DOM样式，预先定义好class，然后修改DOM的className
+* 把DOM离线后修改，比如：先把DOM给display：none（有一次Reflow），然后你修改100次，然后再把它显示出来
+* 不要把DOM节点的属性值放在一个循环里当成循环里的变量
+* 不要使用table布局，可能很小的一个小改动会造成整个table的重新布局
+* 动画实现的速度的选择
+* 对于动画新建图层
+* 启用GPU硬件加速
 
 ## 避免对样式的频繁改动
 在通常情况下，页面的一帧内容被渲染到屏幕上会按照如下顺序依次进行，首先执行JavaScript代码，然后依次是样式计算、页面布局、绘制与合成。如果在JavaScript运行阶段涉及上述三类操作，浏览器就会强制提前页面布局的执行，为了尽量降低页面布局计算带来的性能损耗，我们应当避免使用JavaScript对样式进行频繁的修改。如果一定要修改样式，则可通过以下几种方式来降低触发重排或回流的频次。 
