@@ -22,6 +22,7 @@
 
 ## 开源项目
 * [monitor](https://github.com/clouDr-f2e/monitor)
+* [web-monitoring](https://github.com/kisslove/web-monitoring/)
 * [zanePerfor](https://github.com/wangweianger/zanePerfor)
 * [rrweb](https://github.com/rrweb-io/rrweb)
 

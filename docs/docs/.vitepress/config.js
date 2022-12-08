@@ -208,6 +208,10 @@ module.exports = {
                             link: "/monitor/index",
                         },
                         {
+                            text: "前端采集脚本",
+                            link: "/monitor/collect",
+                        },
+                        {
                             text: "相关资料",
                             link: "/monitor/learn",
                         },
