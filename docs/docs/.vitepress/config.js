@@ -142,6 +142,14 @@ module.exports = {
                             text: "Service Worker缓存",
                             link: "/optimization/response/service-worker",
                         },
+                        {
+                            text: "服务端性能优化",
+                            link: "/optimization/response/ssr",
+                        },
+                        {
+                            text: "浏览器存储",
+                            link: "/optimization/response/browser-cache",
+                        },
                     ]
                 },
                 {
