@@ -3,3 +3,4 @@
 * [探究 LightHouse 工作流程](https://mp.weixin.qq.com/s/DUZUHataXTSX_1uvInJcnA)
 * [雅虎军规](https://developer.yahoo.com/performance/rules.html?guccounter=1)
 * [前端性能优化原理与实践](https://www.kancloud.cn/sllyli/performance/1242194)
+* [浏览器性能优化实战](https://blog.csdn.net/Tencent_TEG/article/details/116955497)
