@@ -216,6 +216,10 @@ module.exports = {
                             link: "/monitor/index",
                         },
                         {
+                            text: "前端监控内容",
+                            link: "/monitor/content",
+                        },
+                        {
                             text: "前端采集脚本",
                             link: "/monitor/collect",
                         },
@@ -223,6 +227,15 @@ module.exports = {
                             text: "相关资料",
                             link: "/monitor/learn",
                         },
+                    ],
+                },
+                {
+                    text: "监控内容",
+                    items: [
+                        {
+                            text: "性能监控",
+                            link: "/monitor/script/performance",
+                        }
                     ],
                 }
             ],
