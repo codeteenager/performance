@@ -203,6 +203,14 @@ module.exports = {
                         {
                             text: "懒加载和预加载",
                             link: "/optimization/other/load",
+                        },
+                        {
+                            text: "骨架屏",
+                            link: "/optimization/other/skeleton"
+                        },
+                        {
+                            text: "接口优化",
+                            link: "/optimization/other/interface"
                         }
                     ]
                 }
