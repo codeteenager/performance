@@ -19,6 +19,7 @@
 * [蚂蚁金服如何把前端性能监控做到极致?](https://www.infoq.cn/article/dxa8am44oz*lukk5ufhy)
 * [如何进行Web性能监控](http://www.alloyteam.com/2020/01/14184/)
 * [如何实现一个前端监控回放系统](https://hijiangtao.github.io/2021/01/25/Web-Record-and-Replay/)
+* [应用性能前端监控，字节跳动这些年经验都在这了](https://juejin.cn/post/7010647775880708133)
 
 ## 开源项目
 * [monitor](https://github.com/clouDr-f2e/monitor)

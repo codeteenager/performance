@@ -187,13 +187,35 @@ module.exports = {
                     collapsible: true,
                     items: [
                         {
+                            text: "资源优先级",
+                            link: "/optimization/resource/priority"
+                        },
+                        {
                             text: "图片优化",
                             link: "/optimization/resource/image",
                         },
                         {
-                            text: "构建优化",
-                            link: "/optimization/resource/build",
+                            text: "压缩&合并",
+                            link: "/optimization/resource/compress",
                         },
+                    ]
+                },
+                {
+                    text: "代码优化",
+                    collapsible: true,
+                    items: [
+                        {
+                            text: "HTML优化",
+                            link: "/optimization/code/html"
+                        },
+                        {
+                            text: "CSS优化",
+                            link: "/optimization/code/css"
+                        },
+                        {
+                            text: "JavaScript优化",
+                            link: "/optimization/code/javascript"
+                        }
                     ]
                 },
                 {
@@ -211,6 +233,10 @@ module.exports = {
                         {
                             text: "接口优化",
                             link: "/optimization/other/interface"
+                        },
+                        {
+                            text: "webpack优化",
+                            link: "/optimization/other/webpack"
                         }
                     ]
                 }
@@ -241,9 +267,17 @@ module.exports = {
                     text: "监控内容",
                     items: [
                         {
+                            text: "异常监控",
+                            link: "/monitor/script/exception",
+                        },
+                        {
+                            text: "接口监控",
+                            link: "/monitor/script/interface",
+                        },
+                        {
                             text: "性能监控",
                             link: "/monitor/script/performance",
-                        }
+                        },
                     ],
                 }
             ],
