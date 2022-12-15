@@ -258,25 +258,36 @@ module.exports = {
                             link: "/monitor/collect",
                         },
                         {
-                            text: "相关资料",
-                            link: "/monitor/learn",
-                        },
-                    ],
-                },
-                {
-                    text: "监控内容",
-                    items: [
-                        {
                             text: "异常监控",
-                            link: "/monitor/script/exception",
+                            link: "/monitor/exception",
                         },
                         {
                             text: "接口监控",
-                            link: "/monitor/script/interface",
+                            link: "/monitor/interface",
                         },
                         {
                             text: "性能监控",
-                            link: "/monitor/script/performance",
+                            link: "/monitor/performance",
+                        },
+                        {
+                            text: "白屏",
+                            link: "/monitor/write-screen",
+                        },
+                        {
+                            text: "SDK设计",
+                            link: "/monitor/sdk",
+                        },
+                        {
+                            text: "前端性能平台",
+                            link: "/monitor/platform",
+                        },
+                        {
+                            text: "性能专项测试",
+                            link: "/monitor/test",
+                        },
+                        {
+                            text: "相关资料",
+                            link: "/monitor/learn",
                         },
                     ],
                 }
