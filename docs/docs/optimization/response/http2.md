@@ -1,7 +1,20 @@
 # HTTP 2
+HTTP/2(超文本传输协议第2版，最初命名为HTTP2.0)，简称为h2(基于TLS/1.2或以上版本的加密连接) 或h2c(非加密连接)，是HTTP协议的第二个版本。
+
 2009 年，谷歌公开了自行研发的 SPDY 协议，主要解决 HTTP/1.1 效率不高的问题。 这个协议在 Chrome 浏览器上证明可行以后，就被当作 HTTP/2 的基础，主要特性都在 HTTP/2 之中得到继承。
 
 2015年，HTTP/2 发布。它不叫 HTTP/2.0，是因为标准委员会不打算再发布子版本了，下一个新版本将是 HTTP/3。 
+
+它的优点主要有：
+* 采用二进制格式传输数据
+* 多路复用，允许通过一个HTTP/2连接发起多个请求
+* 对Header头压缩(Header Compressior)，传输体积小
+* 服务端推送(Server Push)，服务端能够更快的把资源推送给客户端
+
+开启HTTP/2站点的优势：
+* 可以降低服务器压力，通过对header头的压缩、二进制传输，这样服务器的压力会变小。
+* 提升网站的访问速度，header头变小，页面传输速度有提升。
+* 保护网站安全，HTTP/2开启是要开启HTTPS的，相对保障网站的安全。
 
 ## 二进制协议 
 HTTP/1.1 版的头信息肯定是文本（ASCII 编码），数据体可以是文本，也可以是二进制。HTTP/2 则是一个彻底的二进制协议，头信息和数据体都是二进制，并且统称为"帧"（frame）：头信息帧和数据帧。 
@@ -35,6 +48,18 @@ HTTP/2 对这一点做了优化，引入了头信息压缩机制（header compre
 HTTP/2 允许服务器未经请求，主动向客户端发送资源，这叫做服务器推送（server push）。 
 
 常见场景是客户端请求一个网页，这个网页里面包含很多静态资源。正常情况下，客户端必须收到网页后，解析 HTML 源码，发现有静态资源，再发出静态资源请求。其实，服务器可以预期到客户端请求网页后，很可能会再请求静态资源，所以就主动把这些静态资源随着网页一起发给客户端了。 
+
+## 在Nginx上启用HTTP/2
+1. 升级OpenSSL
+2. 重新编译Nginx
+```shell
+cd nginx-xxx
+./configure --with-http_ssl_module --with-http_v2_module
+make&&make install
+```
+3. 验证HTTP/2，浏览器下查看有没有小绿锁
+4. 浏览器请求截图，查看protocol是否是h2
+![](/optimization/83.png)
 
 ## 参考链接 
 * https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn
