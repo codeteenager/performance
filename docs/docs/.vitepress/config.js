@@ -237,6 +237,10 @@ module.exports = {
                         {
                             text: "webpack优化",
                             link: "/optimization/other/webpack"
+                        },
+                        {
+                            text: "流程优化",
+                            link: "/optimization/other/process"
                         }
                     ]
                 }
