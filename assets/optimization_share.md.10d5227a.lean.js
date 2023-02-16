@@ -1,1 +1,0 @@
-import{_ as e,c as r,o as a,a as t}from"./app.75d52317.js";const m=JSON.parse('{"title":"分享","description":"","frontmatter":{},"headers":[],"relativePath":"optimization/share.md","lastUpdated":1670927597000}'),i={name:"optimization/share.md"},n=t("",2),l=[n];function o(c,s,_,p,d,h){return a(),r("div",null,l)}const b=e(i,[["render",o]]);export{m as __pageData,b as default};
